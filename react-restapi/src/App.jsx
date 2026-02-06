@@ -71,8 +71,14 @@ const App = () => {
             <h2>Posts</h2>
             <ul>
               {posts.map(post => (
-                <li key={post.id} onClick={() => setSelectedPost(post)}>
-                  {post.title}
+                <li key={post.id} onClick={() => setSelectedPost(post)} style={{ border: '1px solid #ccc', margin: '10px', padding: '10px', cursor: 'pointer' }}>
+                  {/* This renders the title */}
+                  <h3>{post.title}</h3> 
+                  
+                  {/* Add this line to render the body! */}
+                  <p>{post.body}</p>
+                  
+                  <small>ID: {post.id}</small>
                 </li>
               ))}
             </ul>
